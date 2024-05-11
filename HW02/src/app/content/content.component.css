@@ -1,0 +1,48 @@
+body
+{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+}
+.section
+{
+    height: 100%;
+    width: 100%;
+    background-color: initial;
+    display: flex;
+    background-color: rgb(173, 209, 193);
+    flex-direction: column;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+    .section div
+    {
+        background-color: rgb(149, 192, 190);
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+
+    }
+        .section h3
+        {
+            text-align: center;
+            width: 100%;
+            height: auto;
+            color: rgb(46, 46, 46);
+            background-color: initial;
+        }
+        .section p
+        {
+            width: 100%;
+            height: auto;
+            color: blue;
+            margin-top: 10px;
+        }

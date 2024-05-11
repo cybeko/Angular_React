@@ -1,0 +1,29 @@
+footer
+{
+    width: 100%;
+    height: 15%;
+    background-color: rgb(73, 139, 139);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    color: white;
+    overflow: hidden;
+}
+.section
+{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(48, 117, 117);
+    display: flex;
+    flex-direction: column;
+}
+    .section p
+    {
+        background-color: initial;
+        color: white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
