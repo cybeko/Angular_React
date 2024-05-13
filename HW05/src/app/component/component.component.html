@@ -1,0 +1,23 @@
+<main>
+    <h2>View information about the biggest: </h2>
+    <div>
+        <button (click)="buttonId = 1">Car</button>
+        <button (click)="buttonId = 2">Ship</button>
+        <button (click)="buttonId = 3">Plane</button>
+    </div>
+    
+    <div [ngSwitch]="buttonId">
+        <div *ngSwitchCase="1">
+            <p>{{ descriptions[0] }}</p>
+        </div>
+        <div *ngSwitchCase="2">
+            <p>{{ descriptions[1] | uppercase }}</p>
+        </div>
+        <div *ngSwitchCase="3">
+            <p>{{ descriptions[2]  | lowercase }}</p>
+        </div>
+        <div *ngSwitchDefault>
+            <p>Press any button</p>
+        </div>
+    </div>
+</main>
