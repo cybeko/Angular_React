@@ -1,0 +1,21 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+nav a
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    padding: 0px 10px;
+    border-right: 1px solid #c7c7c7;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+nav a:hover
+{
+    opacity: 1;
+}
