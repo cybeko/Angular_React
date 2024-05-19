@@ -1,0 +1,6 @@
+<div class="cards">
+    <p>Name: {{productName}}</p>
+    <p>Color: <ng-content ></ng-content></p>
+    <p>Price: {{ getPrice() }}</p>
+    <button (click)="onSelect()">Ознакомиться</button>
+</div>
