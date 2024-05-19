@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
   <div class="row">
     <app-product [imageName]="'Ноутбуки'" [imageSrc]="'https://video.rozetka.com.ua/img_superportal/kompyutery_i_noutbuki/noutbuki.png'"></app-product>
     <app-product [imageName]="'Компьютеры'" [imageSrc]="'https://video.rozetka.com.ua/img_superportal/kompyutery_i_noutbuki/kompyutery.png'"></app-product>
@@ -12,5 +12,10 @@
     <app-product [imageName]="'Клавиатуры и мыши'" [imageSrc]="'https://video.rozetka.com.ua/img_superportal/kompyutery_i_noutbuki/klaviatury-i-myshi.png'"></app-product>
     <app-product [imageName]="'Аксессуары для электроники'" [imageSrc]="'https://video.rozetka.com.ua/img_superportal/kompyutery_i_noutbuki/aksessuari-dlia-elektronyky.png'"></app-product>
     <app-product [imageName]="'Оргтехника'" [imageSrc]="'https://video.rozetka.com.ua/img_superportal/kompyutery_i_noutbuki/ofisnaya-tekhnika.png'"></app-product>
+  </div>
+</body> -->
+<body> 
+  <div class="row">
+    <app-product *ngFor="let product of products" [imageName]="product.imageName" [imageSrc]="product.imageSrc"></app-product>
   </div>
 </body>
