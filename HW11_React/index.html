@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="book"></div>
+    <div id="music"></div>
+    <div id="dish"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        const rowStyle = {
+            display: 'flex',
+            flexDirection: 'row',
+            width:'50%',
+        }
+        const imageStyle = {
+            width:'300px',
+            margin: '20px'
+        }
+        const blockStyle = {
+            width:'100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }
+        const userBook = {
+            name: 'No Longer Human',
+            author: 'Osamu Dazai',
+            genre: 'Novel',
+            pages: 176,
+            img: 'https://mlv5hpaq6pqh.i.optimole.com/cb:rrIU.880a/w:660/h:1009/q:mauto/f:best/https://bookaddictslb.com/wp-content/uploads/2022/08/no-longer.png'
+        }
+        const userMusic = {
+            name: 'Placebo',
+            members: [
+                {name: 'Brian Molko', position: 'Lead vocalist and guitarist'},
+                {name: 'Stefan Olsdal', position: 'Bassist and guitarist'},
+                {name: 'Matt Lunn', position: 'Drummer'}
+            ], 
+            albums: [
+                { name: 'Battle for the Sun', img: 'https://upload.wikimedia.org/wikipedia/en/8/80/Battlecover.jpg' },
+                { name: 'Meds', img: 'https://m.media-amazon.com/images/I/71OKFKI5zlL._UF1000,1000_QL80_.jpg' },
+                { name: 'Without You I\'m Nothing', img: 'https://i.scdn.co/image/ab67616d0000b273ac68d5f575b62ee76a235396' }
+            ]
+        }
+        const userDish = {
+            name: 'Tomato Egg Drop Soup',
+            ingredients: ['Tomatoes', '2-3 large eggs', 'Chicken broth', 'Green onions', 'Soy sauce', 'Salt and pepper', 'Garlic', 'Cooking oil'],
+            steps: ['Heat oil, sauté chopped tomatoes until softened.', 
+            'Add broth, bring to a simmer.', 
+            'Season with soy sauce, salt, pepper, and optional seasonings.', 
+            'Slowly pour beaten eggs into simmering soup while stirring.', 'Garnish with chopped green onions.', 'Serve hot.'],
+            img: 'https://www.marionskitchen.com/wp-content/uploads/2020/02/10-minute-Tomato-Egg-Drop-Soup1.jpg'
+        }
+
+        ReactDOM.createRoot(book).render(
+                <div style={rowStyle}>
+                    <div>
+                        <h1>Book</h1>
+                        <p>Name: {userBook.name}</p>
+                        <p>Author: {userBook.author}</p>
+                        <p>Genre: {userBook.genre}</p>
+                        <p>Pages: {userBook.pages}</p>
+                    </div>
+                    <img style={imageStyle} src={userBook.img}/>
+                </div>
+            );
+        ReactDOM.createRoot(music).render(
+            <div>
+                <h2>Music</h2>
+                <p>Name: {userMusic.name}</p>
+                <p>Members:</p>
+                <ul>
+                    {userMusic.members.map(member => (
+                        <li>{member.name} - {member.position}</li>
+                    ))}
+                </ul>
+                <p>Albums:</p>
+                <div style={rowStyle}>
+                    {userMusic.albums.map(album => (
+                    <div style={blockStyle}>
+                        <p>{album.name}</p>
+                        <img style={imageStyle} src={album.img} />
+                    </div>
+                ))}
+                </div>
+    
+            </div>
+        );
+        ReactDOM.createRoot(dish).render(
+            <div>
+                <h2>Dish</h2>
+                <p>Name: {userDish.name}</p>
+                <p>Ingredients:</p>
+                <ul>
+                    {userDish.ingredients.map(ingredient => (
+                        <li>{ingredient}</li>
+                    ))}
+                </ul>
+                <p>Steps:</p>
+                <ol>
+                    {userDish.steps.map(step => (
+                        <li>{step}</li>
+                    ))}
+                </ol>
+                <img style={imageStyle} src={userDish.img} alt={userDish.name} />
+            </div>
+        );
+    </script>
+</body>
+</html>
