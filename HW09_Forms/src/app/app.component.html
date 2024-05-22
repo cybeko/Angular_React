@@ -1,0 +1,36 @@
+<body>
+  <div class="wrapper">
+    <form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit()">
+      <div>
+        <label>Email</label><br>
+        <input name="email" formControlName="userEmail" />
+        <p class="text__alert" *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">Incorrect email</p>
+      </div>
+
+      <div>
+        <label>Password</label><br>
+        <input type="password" name="password" formControlName="userPassword" />
+        <p *ngIf="myForm.controls['userPassword'].invalid && myForm.controls['userPassword'].touched" class="text__alert">Password has to be at least 8 symbols long</p>
+      </div>
+
+      <div>
+        <label><input class="input__checkbox" type="checkbox" formControlName="userCheckbox"> I have hobbies </label>
+      </div>
+
+      <div>
+        <input type="text" formControlName="hobby">
+        <button type="button" [disabled]="myForm.invalid || !myForm.get('userCheckbox')?.value" (click)="addHobby()">Add hobby</button>
+      </div>
+
+        <ul *ngIf="hobbies.length != 0">
+          <p>Hobbies: </p>
+          <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
+        </ul>
+
+      <div>
+        <button [disabled]="myForm.invalid">Submit</button>
+        <p *ngIf="formSubmitted">Form has been logged</p>
+      </div>
+    </form>
+  </div>
+</body>
