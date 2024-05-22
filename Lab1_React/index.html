@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab#1, p.1</title>
+</head>
+<body>
+    <div id="main"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const main = document.getElementById("main");
+
+        const mainStyle = {
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '1em',
+            alignItems: 'center'
+        };
+
+        const user = {
+            name: 'Anna',
+            surname: 'Kalanzhova',
+            age: 18,
+            phone: '0962304973',
+            email: 'email@gmail.com',
+
+            getFullName(){
+                return `${this.name} ${this.surname}`;
+            }
+        };
+
+        ReactDOM.createRoot(main).render(
+                <div style={mainStyle}>
+                    <p>Full name: {user.getFullName()}</p>
+                    <p>Age: {user.age}</p>
+                    <p>Email: {user.email}</p>
+                    <p>Phone number: {user.phone}</p>
+                </div>
+            );
+    </script>
+</body>
+</html>

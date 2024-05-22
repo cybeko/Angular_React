@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab#1, p.2</title>
+</head>
+<body>
+    <div id="info"></div>
+    <div id="images"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const main = document.getElementById("main");
+
+        const mainStyle = {
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '1em',
+            alignItems: 'center'
+        };
+
+        const containerStyle = {
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '1em',
+            alignItems: 'center',
+        };
+        const imageStyle = {
+            margin: '10px',
+            width: '50%'
+        }
+        const city = {
+            name: 'Odesa',
+            country: 'Ukraine',
+            year: 1795,
+            img: ['https://www.gmfus.org/sites/default/files/styles/watermark/public/2021-08/shutterstock_1095160991.jpg?itok=lcC0ycW-', 
+            'https://cdn.britannica.com/40/100440-050-58407CD6/State-Academic-Theatre-of-Opera-and-Ballet-1809.jpg',
+            'https://ukraine.ua/wp-content/uploads/2020/12/Underground-Odesa-catacombs.-Ukraine.Alina-Filatova.jpg']
+        };
+
+        ReactDOM.createRoot(info).render(
+                <div style={mainStyle}>
+                    <p>City name: {city.name}</p>
+                    <p>Country: {city.country}</p>
+                    <p>Founded: {city.year}</p>
+                </div>
+            );
+            
+        ReactDOM.createRoot(images).render(
+                <div style={containerStyle}>
+                    <img style={imageStyle} src={city.img[0]}></img>
+                    <img style={imageStyle} src={city.img[1]}></img>
+                    <img style={imageStyle} src={city.img[2]}></img>
+                </div>
+            );
+    </script>
+</body>
+</html>
