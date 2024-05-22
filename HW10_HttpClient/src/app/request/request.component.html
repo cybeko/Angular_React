@@ -1,0 +1,25 @@
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    @for(user of users; track $index)
+    {
+      <tr>
+        <th>{{user?.name}}</th>
+        <th>{{user?.age}}</th>
+      </tr>
+    }
+</table>
+
+<table>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+    </tr>
+    <tr *ngFor="let album of albums; trackBy: trackByFn">
+      <td>{{ album.id }}</td>
+      <td>{{ album.title }}</td>
+    </tr>
+  </table>
+  
