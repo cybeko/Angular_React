@@ -28,8 +28,4 @@ export class RequestComponent
       next: (data: Album[]) => this.albums = data
     });
   }
-  trackByFn(index: number, item: Album) {
-    return item.id;
-  }
-
 }
