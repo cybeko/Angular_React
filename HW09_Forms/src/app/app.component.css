@@ -26,7 +26,7 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 450px;  /* Set minimum height to 400px */
+    min-height: 460px;
     box-sizing: border-box;
 }
 input
