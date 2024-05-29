@@ -1,0 +1,27 @@
+.product 
+{
+    width: 220px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid rgb(204, 204, 204);
+}
+h1
+{
+    color: rgb(51, 58, 153);
+    font-weight: 400;
+    font-size: larger;
+    text-align: center;
+}
+li
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul
+{
+    padding: 0;
+    margin: 0;
+}
